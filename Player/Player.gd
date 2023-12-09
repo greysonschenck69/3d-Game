@@ -28,7 +28,10 @@ func _physics_process(delta):
 		velocity.y -= gravity * delta
 	
 	if Input.is_action_just_pressed("Shoot"):
-		$Pivot/Gun.shoot()
+		var weapons = $Pivot/Weapon
+		for w in weapons.get_children():
+			if w.has_method("Shoot"):
+				w.Shoot()
 			
 		
 
