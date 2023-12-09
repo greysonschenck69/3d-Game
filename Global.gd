@@ -1,5 +1,8 @@
 extends Node
 
+var which_player = 0
+var player2id = -1
+
 func _ready():
 	process_mode = PROCESS_MODE_ALWAYS		# global should never be paused
 

@@ -1,5 +1,8 @@
 extends Node3D
 
+@onready var controlled = load("res://Player/Player.gd")
+@onready var passive = load("res://Player/Player_Passive.gd")
+
 const N = 1 					# binary 0001
 const E = 2 					# binary 0010
 const S = 4 					# binary 0100

@@ -123,7 +123,7 @@ albedo_color = Color(0.133333, 0.133333, 0.133333, 1)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1, -0.2)
 script = ExtResource("1_v8ue0")
 
-[node name="MeshInstance" type="MeshInstance3D" parent="."]
+[node name="Mesh" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 mesh = SubResource("CapsuleMesh_0n57p")
 
