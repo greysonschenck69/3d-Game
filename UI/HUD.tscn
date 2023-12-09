@@ -1,0 +1,19 @@
+[gd_scene format=3 uid="uid://wrgx4o3n7jif"]
+
+[node name="HUD" type="Control"]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_bottom = 40.0
+grow_horizontal = 2
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 40.0
+color = Color(0, 0, 0, 0.25098)
+
+[node name="Player" type="Label" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 40.0
