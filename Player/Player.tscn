@@ -53,10 +53,6 @@ current = true
 [node name="Blaster" parent="Pivot/Weapon" instance=ExtResource("2_nv6a7")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.35, -0.5, -1)
 
-[node name="Overhead" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 6, 0)
-current = true
-
 [node name="Indicator" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.566, 0)
 billboard = 1

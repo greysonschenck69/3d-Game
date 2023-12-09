@@ -10,8 +10,8 @@ func _ready():
 
 func _player_connected(id):						# When the connection has successfully been made, load the Game scene and hide the lobby
 	Global.player2id = id
-	var maze = preload("res://Maze/Maze.tscn").instantiate()
-	get_tree().get_root().add_child(maze)
+	var game = preload("res://Maze/Game.tscn").instantiate()
+	get_tree().get_root().add_child(game)
 	hide()
 
 

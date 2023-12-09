@@ -1,0 +1,38 @@
+[gd_scene load_steps=9 format=3 uid="uid://jdvc4sqcmo7f"]
+
+[ext_resource type="Script" path="res://Maze/Game.gd" id="1_51kcc"]
+[ext_resource type="PackedScene" uid="uid://dt7bw4fpp0bhc" path="res://Terrian/Terrain.tscn" id="3_yj237"]
+[ext_resource type="PackedScene" uid="uid://ds2j4c4drin6e" path="res://UI/Menu.tscn" id="4_trug4"]
+[ext_resource type="PackedScene" uid="uid://wrgx4o3n7jif" path="res://UI/HUD.tscn" id="5_r3lpe"]
+[ext_resource type="Script" path="res://UI/HUD.gd" id="6_wfn23"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pjpms"]
+
+[sub_resource type="Sky" id="Sky_0tml1"]
+sky_material = SubResource("ProceduralSkyMaterial_pjpms")
+
+[sub_resource type="Environment" id="Environment_251ew"]
+background_mode = 2
+sky = SubResource("Sky_0tml1")
+
+[node name="Game" type="Node3D"]
+script = ExtResource("1_51kcc")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_251ew")
+
+[node name="Terrain" parent="." instance=ExtResource("3_yj237")]
+
+[node name="Player1_Spawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, 0)
+
+[node name="Player2_Spawn" type="Marker3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.880272, -0.471643, 0.0517172, 0.220747, -0.310621, 0.924546, -0.419991, 0.825268, 0.377545, 0, 23.395, 0)
+
+[node name="Menu" parent="." instance=ExtResource("4_trug4")]
+
+[node name="HUD" parent="." instance=ExtResource("5_r3lpe")]
+script = ExtResource("6_wfn23")

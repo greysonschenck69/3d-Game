@@ -14,6 +14,7 @@ var gravity = ProjectSettings.get_setting("physics/3d/default_gravity")
 
 func _ready():
 	$Pivot/Camera.current = true
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 		
 
 func _unhandled_input(event):
@@ -27,11 +28,15 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y -= gravity * delta
 	
-	if Input.is_action_just_pressed("Shoot"):
+	if Input.is_action_just_pressed("jump") and is_on_floor():
+		velocity.y = JUMP_VELOCITY
+		
+		
+	if Input.is_action_just_pressed("shoot"):
 		var weapons = $Pivot/Weapon
 		for w in weapons.get_children():
-			if w.has_method("Shoot"):
-				w.Shoot()
+			if w.has_method("shoot"):
+				w.shoot()
 			
 		
 
