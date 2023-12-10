@@ -27,5 +27,4 @@ func _ready():
 	add_child(player2)
 
 
-func _on_restart_pressed():
-	pass # Replace with function body.
+
