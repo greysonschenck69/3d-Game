@@ -1,12 +1,12 @@
 extends CharacterBody3D
 
-var can_drop = true
+
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
-const SCROLL_SPEED = 1.0
-const MOUSE_SENSITIVITY = 0.002
-const MOUSE_RANGE = 0.5
+const MOUSE_SENSITIVITY = 0.001
 var health = 5
+
+var can_drop = true
 
 var peer_id = -1
 
@@ -19,10 +19,10 @@ func _ready():
 		
 
 func _unhandled_input(event):
-	if event is InputEventMouseMotion: 
-		$Pivot.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
-		rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
-		$Pivot.rotation.x = clamp($Pivot.rotation.x, -MOUSE_RANGE, MOUSE_RANGE)
+	if event is InputEventMouseMotion:
+		$Pivot.rotate_x(-event.relative.y*MOUSE_SENSITIVITY)
+		$Pivot.rotation.x = clamp($Pivot.rotation.x, -0.5, 0.25)
+		rotate_y(-event.relative.x*MOUSE_SENSITIVITY)
 	if event.is_action_pressed("pickup") and can_drop:
 		for w in $Pivot/Weapon.get_children():
 			if w.has_method("drop"):

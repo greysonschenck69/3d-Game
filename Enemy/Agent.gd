@@ -38,6 +38,7 @@ func _on_area_3d_body_exited(_body):
 
 
 func damage():
-	dying = true
-	$AnimationPlayer.play("Death")
-	velocity = Vector3.ZERO
+	if not dying:
+		dying = true
+		$AnimationPlayer.play("Death")
+		velocity = Vector3.ZERO

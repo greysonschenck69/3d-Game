@@ -1,6 +1,5 @@
 extends RigidBody3D
 
-
 @onready var Weapon = load("res://Player/Blaster.tscn")
 
 func _input(event):
