@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/Assets_Biological Weapon.ogg-8a371b61fefa2e4b
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

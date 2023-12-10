@@ -25,3 +25,7 @@ func _ready():
 	else:
 		player2.script = passive
 	add_child(player2)
+
+
+func _on_restart_pressed():
+	pass # Replace with function body.

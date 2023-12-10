@@ -85,3 +85,7 @@ func pickup(weapon):
 func _on_pickup_timer_timeout():
 	can_drop = true
 
+func damage():
+	health -= 1
+	if health <= 0:
+		get_tree().change_scene_to_file("res://UI/end_game.tscn")
