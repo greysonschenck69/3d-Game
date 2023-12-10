@@ -1,11 +1,12 @@
 extends CharacterBody3D
 
-
+var can_drop = true
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
 const SCROLL_SPEED = 1.0
 const MOUSE_SENSITIVITY = 0.002
 const MOUSE_RANGE = 0.5
+var health = 5
 
 var peer_id = -1
 
@@ -22,6 +23,10 @@ func _unhandled_input(event):
 		$Pivot.rotate_x(-event.relative.y * MOUSE_SENSITIVITY)
 		rotate_y(-event.relative.x * MOUSE_SENSITIVITY)
 		$Pivot.rotation.x = clamp($Pivot.rotation.x, -MOUSE_RANGE, MOUSE_RANGE)
+	if event.is_action_pressed("pickup") and can_drop:
+		for w in $Pivot/Weapon.get_children():
+			if w.has_method("drop"):
+				w.drop()
 
 func _physics_process(delta):
 	# Add the gravity.
@@ -70,3 +75,13 @@ func _set_rotation(r):
 @rpc("any_peer","call_remote","unreliable_ordered")
 func _die():
 	queue_free()
+
+
+func pickup(weapon):
+	can_drop = false
+	$Pickup_Timer.start()
+	$Pivot/Weapon.add_child(weapon)
+
+func _on_pickup_timer_timeout():
+	can_drop = true
+

@@ -1,7 +1,7 @@
 extends Node3D
 
 var Bullet_Hole =preload("res://Player/bullet_hole.tscn")
-var Dropped_Blaster = preload("res://Player/Dropped_Blaster.gd")
+var Dropped_Blaster = preload("res://Player/Dropped_Blaster.tscn")
 
 func shoot():
 	$Muzzle.show()
