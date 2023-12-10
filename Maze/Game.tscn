@@ -43,10 +43,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.934306, -0.380865)
 visible = false
 
 [node name="Player1_Spawn" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7, 2, 0)
+transform = Transform3D(0.999497, 0, 0.0317073, 0, 1, 0, -0.0317073, 0, 0.999497, 2.93997, 2, 19.5025)
 
 [node name="Player2_Spawn" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7, 2, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49253, 2, 18.8595)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.880272, -0.471643, 0.0517172, 0.220747, -0.310621, 0.924546, -0.419991, 0.825268, 0.377545, 0, 23.395, 0)
@@ -57,7 +57,7 @@ transform = Transform3D(-0.880272, -0.471643, 0.0517172, 0.220747, -0.310621, 0.
 script = ExtResource("6_wfn23")
 
 [node name="Maze" parent="." instance=ExtResource("6_0uomk")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.67002, 0, 8.7788)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -4.7596, -1, 9.06721)
 
 [node name="Sculpture" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.32082, 0.606736, 4.34747)

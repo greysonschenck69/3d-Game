@@ -1,24 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://j1bnpib0drko"]
+[gd_scene load_steps=9 format=3 uid="uid://j1bnpib0drko"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q2ubj"]
-albedo_color = Color(0.807843, 0.831373, 0.854902, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_v6ucl"]
-material = SubResource("StandardMaterial3D_q2ubj")
+[sub_resource type="BoxMesh" id="BoxMesh_h444m"]
 size = Vector3(2, 2, 0.1)
 
-[sub_resource type="BoxShape3D" id="3"]
+[sub_resource type="BoxShape3D" id="BoxShape3D_8y3ng"]
 size = Vector3(2, 2, 0.1)
-
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_joagm"]
-albedo_color = Color(0.807843, 0.831373, 0.854902, 1)
-
-[sub_resource type="BoxMesh" id="BoxMesh_ipm2h"]
-material = SubResource("StandardMaterial3D_joagm")
-size = Vector3(0.1, 2, 2)
-
-[sub_resource type="BoxShape3D" id="5"]
-size = Vector3(0.1, 2, 2)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_oxqdb"]
 albedo_color = Color(0.807843, 0.831373, 0.854902, 1)
@@ -44,26 +30,19 @@ size = Vector3(2, 0.1, 2)
 
 [node name="StaticBody" type="StaticBody3D" parent="."]
 
-[node name="N" type="MeshInstance3D" parent="StaticBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
-mesh = SubResource("BoxMesh_v6ucl")
+[node name="S" type="MeshInstance3D" parent="StaticBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+mesh = SubResource("BoxMesh_h444m")
+skeleton = NodePath("../..")
 
-[node name="N_Collision" type="CollisionShape3D" parent="StaticBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, -1)
-shape = SubResource("3")
-
-[node name="E" type="MeshInstance3D" parent="StaticBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
-mesh = SubResource("BoxMesh_ipm2h")
-
-[node name="E_Collision" type="CollisionShape3D" parent="StaticBody"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1, 1, 0)
-shape = SubResource("5")
+[node name="S_Collision" type="CollisionShape3D" parent="StaticBody"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 1)
+shape = SubResource("BoxShape3D_8y3ng")
 
 [node name="W" type="MeshInstance3D" parent="StaticBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 1, 0)
 mesh = SubResource("BoxMesh_irroh")
-skeleton = NodePath("../E")
+skeleton = NodePath("")
 
 [node name="W_Collision" type="CollisionShape3D" parent="StaticBody"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1, 3, 0)

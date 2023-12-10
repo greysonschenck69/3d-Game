@@ -71,7 +71,7 @@ func make_maze():
 			unvisited.erase(current)
 		elif stack:
 			current = stack.pop_back()
-	map[0][0] &= N|E|S
+	map[0][0] &= W|S|E
 	for x in range(dim_x):
 		for z in range(dim_z):
 			var tile = tiles[map[x][z]].instantiate()

@@ -1,6 +1,7 @@
 extends Node3D
 
 var Bullet_Hole =preload("res://Player/bullet_hole.tscn")
+var Dropped_Blaster = preload("res://Player/Dropped_Blaster.gd")
 
 func shoot():
 	$Muzzle.show()
@@ -16,3 +17,13 @@ func shoot():
 
 func _on_timer_timeout():
 	$Muzzle.hide()
+
+
+func drop():
+	var game = get_node_or_null("/root/Game")
+	if game != null:
+		var dropped_blaster = Dropped_Blaster.instantiate()
+		game.add_child(dropped_blaster)
+		dropped_blaster.global_position = global_position + Vector3(0, 2, -1)
+		dropped_blaster.linear_velocity = Vector3(0, 1, -2)
+		queue_free()
