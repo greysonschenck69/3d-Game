@@ -37,31 +37,24 @@ var tiles = [
 ]
 
 var tile_size = 2 						# 2-meter tiles
-var width = 20  						# width of map (in tiles)
-var height = 12  						# height of map (in tiles)
+var dim_x = 6  						# width of map (in tiles)
+var dim_z = 6  						# height of map (in tiles)
 
 func _ready():
 	randomize()
 	make_maze()
-	
-func check_neighbors(cell, unvisited):
-	# returns an array of cell's unvisited neighbors
-	var list = []
-	for n in cell_walls.keys():
-		if cell + n in unvisited:
-			list.append(cell + n)
-	return list
-	
+
+
 func make_maze():
 	var unvisited = []  # array of unvisited tiles
 	var stack = []
 	# fill the map with solid tiles
-	for x in range(width):
+	for x in range(dim_x):
 		map.append([])
-		map[x].resize(height)
-		for y in range(height):
-			unvisited.append(Vector2(x, y))
-			map[x][y] = N|E|S|W 		# 15
+		map[x].resize(dim_z)
+		for z in range(dim_z):
+			unvisited.append(Vector2(x, z))
+			map[x][z] = N|E|S|W 		# 15
 	var current = Vector2(0, 0)
 	unvisited.erase(current)
 	while unvisited:
@@ -78,9 +71,20 @@ func make_maze():
 			unvisited.erase(current)
 		elif stack:
 			current = stack.pop_back()
-	for x in range(width):
-		for z in range(height):
+	map[0][0] &= N|E|S
+	for x in range(dim_x):
+		for z in range(dim_z):
 			var tile = tiles[map[x][z]].instantiate()
 			tile.position = Vector3(x*tile_size,0,z*tile_size)
-			tile.name = "Tile_" + str(x) + "_" + str(z)
+			tile.name = "Tile" + str(x) + "_" + str(z)
 			add_child(tile)
+
+
+
+func check_neighbors(current, unvisited):
+	# returns an array of cell's unvisited neighbors
+	var list = []
+	for n in cell_walls.keys():
+		if current + n in unvisited:
+			list.append(current + n)
+	return list

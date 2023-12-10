@@ -172,4 +172,8 @@ omni_attenuation = 1.62451
 wait_time = 0.2
 one_shot = true
 
+[node name="Aim" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0326833, 0)
+target_position = Vector3(0, 0, 10)
+
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

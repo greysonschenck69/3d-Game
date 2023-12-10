@@ -1,10 +1,12 @@
-[gd_scene load_steps=9 format=3 uid="uid://jdvc4sqcmo7f"]
+[gd_scene load_steps=12 format=3 uid="uid://jdvc4sqcmo7f"]
 
 [ext_resource type="Script" path="res://Maze/Game.gd" id="1_51kcc"]
 [ext_resource type="PackedScene" uid="uid://dt7bw4fpp0bhc" path="res://Terrian/Terrain.tscn" id="3_yj237"]
 [ext_resource type="PackedScene" uid="uid://ds2j4c4drin6e" path="res://UI/Menu.tscn" id="4_trug4"]
 [ext_resource type="PackedScene" uid="uid://wrgx4o3n7jif" path="res://UI/HUD.tscn" id="5_r3lpe"]
+[ext_resource type="PackedScene" uid="uid://bnpj1tfouoo6t" path="res://Maze/Maze.tscn" id="6_0uomk"]
 [ext_resource type="Script" path="res://UI/HUD.gd" id="6_wfn23"]
+[ext_resource type="Script" path="res://Terrian/Sculpture.gd" id="7_nbet1"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pjpms"]
 
@@ -14,6 +16,8 @@ sky_material = SubResource("ProceduralSkyMaterial_pjpms")
 [sub_resource type="Environment" id="Environment_251ew"]
 background_mode = 2
 sky = SubResource("Sky_0tml1")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tpvww"]
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_51kcc")
@@ -36,3 +40,15 @@ transform = Transform3D(-0.880272, -0.471643, 0.0517172, 0.220747, -0.310621, 0.
 
 [node name="HUD" parent="." instance=ExtResource("5_r3lpe")]
 script = ExtResource("6_wfn23")
+
+[node name="Maze" parent="." instance=ExtResource("6_0uomk")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.67002, 0, 8.7788)
+
+[node name="Sculpture" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.32082, 0.606736, 4.34747)
+use_collision = true
+material = SubResource("StandardMaterial3D_tpvww")
+script = ExtResource("7_nbet1")
+
+[node name="CSGSphere3D" type="CSGSphere3D" parent="Sculpture"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.323481, 0.622056, 0)
