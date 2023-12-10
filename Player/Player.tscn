@@ -23,6 +23,8 @@ size = Vector3(0.5, 0.5, 0.5)
 
 [node name="Player" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.4, 1, -0.2)
+collision_layer = 13
+collision_mask = 13
 script = ExtResource("1_v8ue0")
 
 [node name="Mesh" type="MeshInstance3D" parent="."]
@@ -50,7 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 0)
 [node name="Weapon" type="Node3D" parent="Pivot"]
 
 [node name="Blaster" parent="Pivot/Weapon" instance=ExtResource("2_nv6a7")]
-transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.35, -0.5, -1)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2, 0)
 
 [node name="Indicator" type="Sprite3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.566, 0)

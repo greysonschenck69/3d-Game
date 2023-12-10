@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://nf8wa1lw7aye"
+path="res://.godot/imported/Assets_Biological Weapon.ogg-8a371b61fefa2e4bc43e4661492f048b.oggvorbisstr"
+
+[deps]
+
+source_file="res://Assets/Assets_Biological Weapon.ogg"
+dest_files=["res://.godot/imported/Assets_Biological Weapon.ogg-8a371b61fefa2e4bc43e4661492f048b.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

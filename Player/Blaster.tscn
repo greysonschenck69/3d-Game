@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://26lxwid68ofs"]
+[gd_scene load_steps=12 format=3 uid="uid://26lxwid68ofs"]
 
 [ext_resource type="Script" path="res://Player/Blaster.gd" id="1_ofjot"]
 [ext_resource type="ArrayMesh" uid="uid://coctux5js24fp" path="res://Assets/muzzleflash.obj" id="2_xewoc"]
 [ext_resource type="Material" uid="uid://bd6f17ntclsb5" path="res://Muzzle.tres" id="3_j2n0m"]
+[ext_resource type="Texture2D" uid="uid://cr1t1n4xp1igj" path="res://Assets/crosshair_white_small.png" id="4_x8rie"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e5wmf"]
 resource_name = "yellow"
@@ -147,10 +148,12 @@ shadow_mesh = SubResource("ArrayMesh_d747b")
 script = ExtResource("1_ofjot")
 
 [node name="blasterE2" type="MeshInstance3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.8, 1.6, -0.8)
 mesh = SubResource("ArrayMesh_fp1u4")
 skeleton = NodePath("")
 
 [node name="Muzzle" type="Node3D" parent="."]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0.8, 1.6, -0.8)
 visible = false
 
 [node name="Muzzleflash" type="MeshInstance3D" parent="Muzzle"]
@@ -173,7 +176,12 @@ wait_time = 0.2
 one_shot = true
 
 [node name="Aim" type="RayCast3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0326833, 0)
-target_position = Vector3(0, 0, 10)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, -0.85)
+target_position = Vector3(0, 0, -30)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.25, 0, 0, 0, 0.25, 0, 0, 0, 0.25, 0, 2, -0.8)
+modulate = Color(1, 1, 1, 0.627451)
+texture = ExtResource("4_x8rie")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
