@@ -17,6 +17,7 @@ lobby menu
 Networking.
 CSG
 Dialogue
+the main objective to kill the zombie chasing after you after you get out of the maze.
 
 ## References
 Bullet hole: https://opengameart.org/content/bullet-decal
