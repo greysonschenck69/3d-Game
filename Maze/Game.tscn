@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://jdvc4sqcmo7f"]
+[gd_scene load_steps=16 format=3 uid="uid://jdvc4sqcmo7f"]
 
 [ext_resource type="Script" path="res://Maze/Game.gd" id="1_51kcc"]
 [ext_resource type="PackedScene" uid="uid://dt7bw4fpp0bhc" path="res://Terrian/Terrain.tscn" id="3_yj237"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://dqnjx7jcqxble" path="res://Enemy/NPC.tscn" id="8_kwkdu"]
 [ext_resource type="PackedScene" uid="uid://8yo7kxoc8144" path="res://Enemy/Agent.tscn" id="9_uar0g"]
 [ext_resource type="PackedScene" uid="uid://ba2tk6xijf3" path="res://Player/Player.tscn" id="10_akgmt"]
-[ext_resource type="AudioStream" uid="uid://nf8wa1lw7aye" path="res://Assets/Assets_Biological Weapon.ogg" id="11_q2ayq"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pjpms"]
 
@@ -74,8 +73,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 4.971)
 
 [node name="Agent" parent="." instance=ExtResource("9_uar0g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.75, -5)
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("11_q2ayq")
-volume_db = -34.667
-autoplay = true

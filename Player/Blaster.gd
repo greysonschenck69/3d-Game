@@ -6,7 +6,6 @@ var Dropped_Blaster = preload("res://Player/Dropped_Blaster.tscn")
 func shoot():
 	$Muzzle.show()
 	$Timer.start()
-	$Sound.play()
 	if $Aim.is_colliding():
 		var target = $Aim.get_collider()
 		var bullet_hole = Bullet_Hole.instantiate()
