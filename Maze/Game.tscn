@@ -52,6 +52,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49253, 2, 18.8595)
 transform = Transform3D(-0.880272, -0.471643, 0.0517172, 0.220747, -0.310621, 0.924546, -0.419991, 0.825268, 0.377545, 0, 23.395, 0)
 
 [node name="Menu" parent="." instance=ExtResource("4_trug4")]
+visible = false
 
 [node name="HUD" parent="." instance=ExtResource("5_r3lpe")]
 script = ExtResource("6_wfn23")

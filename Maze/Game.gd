@@ -25,6 +25,9 @@ func _ready():
 	else:
 		player2.script = passive
 	add_child(player2)
+	
+	get_tree().paused = false
+
 
 
 
