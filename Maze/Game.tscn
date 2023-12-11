@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://jdvc4sqcmo7f"]
+[gd_scene load_steps=19 format=3 uid="uid://jdvc4sqcmo7f"]
 
 [ext_resource type="Script" path="res://Maze/Game.gd" id="1_51kcc"]
 [ext_resource type="PackedScene" uid="uid://dt7bw4fpp0bhc" path="res://Terrian/Terrain.tscn" id="3_yj237"]
@@ -10,6 +10,8 @@
 [ext_resource type="PackedScene" uid="uid://dqnjx7jcqxble" path="res://Enemy/NPC.tscn" id="8_kwkdu"]
 [ext_resource type="PackedScene" uid="uid://8yo7kxoc8144" path="res://Enemy/Agent.tscn" id="9_uar0g"]
 [ext_resource type="PackedScene" uid="uid://ba2tk6xijf3" path="res://Player/Player.tscn" id="10_akgmt"]
+[ext_resource type="Script" path="res://UI/Exit_to_end_game.gd" id="11_odpl2"]
+[ext_resource type="Texture2D" uid="uid://cpi3av35b8kts" path="res://Assets/portal_start.png" id="12_akyc2"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_pjpms"]
 
@@ -27,6 +29,8 @@ agent_height = 3.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_tpvww"]
 
+[sub_resource type="SphereShape3D" id="SphereShape3D_m5mu2"]
+
 [node name="Game" type="Node3D"]
 script = ExtResource("1_51kcc")
 
@@ -40,13 +44,12 @@ navigation_mesh = SubResource("NavigationMesh_5op8h")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.934306, -0.380865)
 
 [node name="Player" parent="." instance=ExtResource("10_akgmt")]
-visible = false
 
 [node name="Player1_Spawn" type="Marker3D" parent="."]
-transform = Transform3D(0.999497, 0, 0.0317073, 0, 1, 0, -0.0317073, 0, 0.999497, 2.93997, 2, 19.5025)
+transform = Transform3D(0.999497, 0, 0.0317073, 0, 1, 0, -0.0317073, 0, 0.999497, 2.93997, 2, 19.9605)
 
 [node name="Player2_Spawn" type="Marker3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49253, 2, 18.8595)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.49253, 2, 19.0753)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(-0.880272, -0.471643, 0.0517172, 0.220747, -0.310621, 0.924546, -0.419991, 0.825268, 0.377545, 0, 23.395, 0)
@@ -74,3 +77,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.75, 4.971)
 
 [node name="Agent" parent="." instance=ExtResource("9_uar0g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10, -0.75, -5)
+
+[node name="Exit_to_end_game" type="Area3D" parent="."]
+script = ExtResource("11_odpl2")
+
+[node name="Sprite3D" type="Sprite3D" parent="Exit_to_end_game"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1442, 0, -24.1035)
+texture = ExtResource("12_akyc2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Exit_to_end_game"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -19.1442, 0, -24.1035)
+shape = SubResource("SphereShape3D_m5mu2")
+
+[connection signal="body_entered" from="Exit_to_end_game" to="Exit_to_end_game" method="_on_body_entered"]

@@ -4,8 +4,11 @@
 [ext_resource type="Shader" path="res://UI/main_menu.gdshader" id="2_ijjkv"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_gfj3e"]
-render_priority = 0
 shader = ExtResource("2_ijjkv")
+shader_parameter/TWOPI = 6.28319
+shader_parameter/NUM_EXPLOSIONS = 8.0
+shader_parameter/NUM_PARTICLES = 70.0
+shader_parameter/MOD3 = Vector3(0.1031, 0.11369, 0.13787)
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
