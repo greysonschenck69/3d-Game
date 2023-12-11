@@ -1,6 +1,20 @@
-[gd_scene load_steps=2 format=3 uid="uid://r32wwwcncig6"]
+[gd_scene load_steps=4 format=3 uid="uid://r32wwwcncig6"]
 
 [ext_resource type="Script" path="res://UI/Lobby.gd" id="1_o43pk"]
+[ext_resource type="Shader" path="res://UI/Lobby.gdshader" id="2_tg4bv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_y1hgk"]
+shader = ExtResource("2_tg4bv")
+shader_parameter/OCTAVE = 6
+shader_parameter/mulscale = 5.0
+shader_parameter/height = 0.6
+shader_parameter/tide = 0.1
+shader_parameter/foamthickness = 0.1
+shader_parameter/timescale = 1.0
+shader_parameter/waterdeep = 0.3
+shader_parameter/WATER_COL = Color(0.1, 0.44, 0.76, 1)
+shader_parameter/WATER2_COL = Color(0.09, 0.39, 0.67, 1)
+shader_parameter/FOAM_COL = Color(0.13, 0.55, 0.9, 1)
 
 [node name="Lobby" type="Control"]
 layout_mode = 3
@@ -10,6 +24,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_o43pk")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_y1hgk")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 1

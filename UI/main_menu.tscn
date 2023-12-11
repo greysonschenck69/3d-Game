@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://bm8rd0k4hror"]
+[gd_scene load_steps=4 format=3 uid="uid://bm8rd0k4hror"]
 
 [ext_resource type="Script" path="res://UI/Main_Menu.gd" id="1_iawfv"]
+[ext_resource type="Shader" path="res://UI/main_menu.gdshader" id="2_ijjkv"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_gfj3e"]
+render_priority = 0
+shader = ExtResource("2_ijjkv")
 
 [node name="Main_Menu" type="Control"]
 layout_mode = 3
@@ -12,6 +17,7 @@ grow_vertical = 2
 script = ExtResource("1_iawfv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_gfj3e")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
