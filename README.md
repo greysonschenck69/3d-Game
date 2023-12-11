@@ -3,7 +3,7 @@
 Description
 
 ## Implementation
-
+The objective of the game to first escape the maze and then not get killed by the enemy there is the player that mirros what player 1 is doing so you have to move and try and move the other character that is controlled by character one to the portal hidden in the map.
 ## What Makes this a Game?
 Has a maze
 Has a gun that is able to be shot dropped and picked up with effects with the gun.
@@ -17,7 +17,6 @@ lobby menu
 Networking.
 CSG
 Dialogue
-the main objective to kill the zombie chasing after you after you get out of the maze.
 
 ## References
 Bullet hole: https://opengameart.org/content/bullet-decal
